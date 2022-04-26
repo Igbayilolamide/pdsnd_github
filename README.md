@@ -12,7 +12,11 @@ The interactive program was implemented using Python and the data on any of thes
 The program employs error handling and some python libraries.
 
 ### Files used
-Include the files used
+The python script bikeshare.py
+The raw data of users from each city can be found in the csv files below;
+Chicago.csv
+Washington.csv
+New_york_city.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
