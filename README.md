@@ -7,7 +7,9 @@ This project was created on _Tuesday, 26th of April, 2022_
 **Explore Us Bikeshare Data**
 
 ### Description
-Describe what your project is about and what it does
+This project provides details of _Bikeshare_ users in 3 cities in the US (Chicago, Washington, New York)
+The interactive program was implemented using Python and the data on any of these cities is provided based on inputs from the user.
+The program employs error handling and some python libraries.
 
 ### Files used
 Include the files used
