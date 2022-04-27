@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 import sys
 
-CITY_DATA = { 'chicago': 'chicago.csv',
+CITY_DATA = {'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+              'washington': 'washington.csv'}
 cities = ['chicago','new york city','washington','newyork','new york']
 months = ['all','january','february','march','april','may','june']
 dow = ['all','monday','tuesday','wednesday','thursday','friday','saturday','sunday']
@@ -39,7 +39,7 @@ def get_filters():
     while True:
         month = str(input("\nEnter a month between January through June or all to view all months: ")).lower()
         if month not in months:
-            print("You've entered an invalid month or one which data is unavailable, Try again. ")
+            print("You've entered an invalid month or one which data is unavailable, Try again.")
             confirmation = input("Would you like to retry? Type yes or no to exit: ")
             if confirmation == 'yes':
                 continue
@@ -67,7 +67,7 @@ def get_filters():
 
 def confirm_data(city,month,day):
     """ Function prints requested data and exits if user says no"""
-    print("\nYou have requested Bikeshare's data for: \nCity: {}, Month: {}, Day: {} ".format(city.title(),month.title(),day.title()))
+    print("\nYou have requested Bikeshare's data for: \nCity: {}\nMonth: {}\nDay: {}".format(city.title(),month.title(),day.title()))
     ask = input("\nDo you wish to continue? Enter yes to continue, no to exit:")
     if ask != 'yes':
         sys.exit("..Exiting session..")
