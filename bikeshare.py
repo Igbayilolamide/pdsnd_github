@@ -3,16 +3,13 @@ import pandas as pd
 import numpy as np
 import sys
 
-CITY_DATA = { 'chicago': 'chicago.csv',
+CITY_DATA = {'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
-              'washington': 'washington.csv' }
+              'washington': 'washington.csv'}
 cities = ['chicago','new york city','washington','newyork','new york']
 months = ['all','january','february','march','april','may','june']
 dow = ['all','monday','tuesday','wednesday','thursday','friday','saturday','sunday']
 
-def call_exit():
-    """ Exits the session """
-    sys.exit("..Exiting session..")
 
 def get_filters():
     """
@@ -34,7 +31,7 @@ def get_filters():
             if confirmation == 'yes':
                 continue
             else:
-                call_exit()
+                sys.exit("..Exiting session..")
         else:
             break
 
@@ -42,12 +39,12 @@ def get_filters():
     while True:
         month = str(input("\nEnter a month between January through June or all to view all months: ")).lower()
         if month not in months:
-            print("You've entered an invalid month or one which data is unavailable, Try again. ")
+            print("You've entered an invalid month or one which data is unavailable, Try again.")
             confirmation = input("Would you like to retry? Type yes or no to exit: ")
             if confirmation == 'yes':
                 continue
             else:
-                call_exit()
+                sys.exit("..Exiting session..")
         else:
             break
 
@@ -60,7 +57,7 @@ def get_filters():
             if confirmation == 'yes':
                 continue
             else:
-                call_exit()
+                sys.exit("..Exiting session..")
         else:
             break
 
@@ -70,10 +67,10 @@ def get_filters():
 
 def confirm_data(city,month,day):
     """ Function prints requested data and exits if user says no"""
-    print("\nYou have requested Bikeshare's data for: \nCity: {}, Month: {}, Day: {} ".format(city.title(),month.title(),day.title()))
+    print("\nYou have requested Bikeshare's data for: \nCity: {}\nMonth: {}\nDay: {}".format(city.title(),month.title(),day.title()))
     ask = input("\nDo you wish to continue? Enter yes to continue, no to exit:")
     if ask != 'yes':
-        call_exit()
+        sys.exit("..Exiting session..")
 
 def load_data(city, month, day):
     """
@@ -88,7 +85,7 @@ def load_data(city, month, day):
     """
     # confirms your input
     confirm_data(city,month,day)
-    
+
     # handles different inputs for new york
     if city in ['newyork','new york','new york city']:
         city = 'new york city'
@@ -257,7 +254,7 @@ def main():
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
-            call_exit()
+            sys.exit("..Exiting session..")
 
 
 if __name__ == "__main__":
